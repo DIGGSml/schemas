@@ -86,10 +86,10 @@
                     txt += '<a href="http://www.diggsml.org">www.diggsml.org</a> is the official namespace of the DIGGS project.</p>';
                     if(rtype = "schema"){
                         if (dir == ""){
-                            txt += '<p>You may download the schema files as a single compressed file per release version at: <a href="https://github.com/DIGGSml/schema-dev/releases">https://github.com/DIGGSml/schema-dev/releases</a></p>';
+                            txt += '<p>You may download the schema files as a single compressed file per release version at:<br/><a href="https://github.com/DIGGSml/schema-dev/releases">https://github.com/DIGGSml/schema-dev/releases</a></p>';
                             }else{
                             var version = dir.substring(1,dir.substring.indexOf("/"));
-                            txt += '<p>You may download the schema files for version ' + version + ' as a single compressed file at: <a href="https://github.com/DIGGSml/schema-dev/releases/tag/' + version + '">https://github.com/DIGGSml/schema-dev/releases/tag/' + version + '</a></p>';
+                            txt += '<p>You may download the schema files for version ' + version + ' as a single compressed file at:<br/><a href="https://github.com/DIGGSml/schema-dev/releases/tag/' + version + '">https://github.com/DIGGSml/schema-dev/releases/tag/' + version + '</a></p>';
                         }
                     }
                     txt += '<p>DIGGS is a Special Project of the <a href="https://www.geoinstitute.org/">Amerian Society of Civil Engineers Geo-Institute (G-I)</a>. All rights reserved.</p>';
