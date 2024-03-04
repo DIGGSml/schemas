@@ -71,7 +71,7 @@
                         const dat = await resp.json();
                         for (let dt of dat) {
                             var d = new Date(dt.commit.author.date);
-                            dString = d.getFullYear() +'-'+('0' + d.getMonth()+1).slice(-2) + '-'+('0' + d.getDate()).slice(-2)+' '+('0' + d.getHours()).slice(-2)+':'+('0' + d.getMinutes()).slice(-2)+':'+('0' + d.getSeconds()).slice(-2);
+                            dString = d.getFullYear() + '-' + ("0"+ (d.getMonth()+1)).slice(-2) + '-' + ("0"+d.getDate()).slice(-2) +' '+('0' + d.getHours()).slice(-2)+':'+('0' + d.getMinutes()).slice(-2)+':'+('0' + d.getSeconds()).slice(-2);
                         }
                         //Write out row for item
                         txt += '<tr><td valign="top">'+image+'</td><td><a href="'+rec.name+'">'+rec.name+'</a></td><td>'+dString+'</td><td>'+size+'</td</tr>';
@@ -82,17 +82,17 @@
                     if(repo == "def") var rtype = "resource";
                     if(repo == "schemas") rtype = "schema";
                     if(repo == "doc") rtype = "documantation";
-                    txt += '<a href="http://diggsml.org/' + repo + '/">diggsml.org/' + repo + '</a> is the official ' + rtype + ' repository for the <a href="http://diggsml.org">DIGGS project, a data interchange standard for the geotechnical and geoenvironmental communityy</a><br/>';
+                    txt += '<a href="http://diggsml.org/' + repo + '/">diggsml.org/' + repo + '</a> is the official ' + rtype + ' repository for the <a href="http://diggsml.org">DIGGS project</a>, a data interchange standard for the geotechnical and geoenvironmental community.<br/>';
                     txt += '<a href="http://www.diggsml.org">www.diggsml.org</a> is the official namespace of the DIGGS project.</p>';
                     if(rtype = "schema"){
-                        if (dir = ''){
-                            txt += '<p><You may download the schema files as a single compressed file per release version at <a href="https://github.com/DIGGSml/schema-dev/releases">https://github.com/DIGGSml/schema-dev/releases</a></p>';
-                        }else{
+                        if (dir == ""){
+                            txt += '<p>You may download the schema files as a single compressed file per release version at:<br/><a href="https://github.com/DIGGSml/schema-dev/releases">https://github.com/DIGGSml/schema-dev/releases</a></p>';
+                            }else{
                             var version = dir.substring(1,dir.substring.indexOf("/"));
-                            txt += '<p><You may download the schema files for version ' + version + ' as a single compressed file at: <a href="https://github.com/DIGGSml/schema-dev/releases/tag/' + version + '">https://github.com/DIGGSml/schema-dev/releases/tag/' + version + '</a></p>';
+                            txt += '<p>You may download the schema files for version ' + version + ' as a single compressed file at:<br/><a href="https://github.com/DIGGSml/schema-dev/releases/tag/' + version + '">https://github.com/DIGGSml/schema-dev/releases/tag/' + version + '</a></p>';
                         }
                     }
-                    txt += '<p>DIGGS is a Special Project of the <a href="https://www.geoinstitute.org/">Amerian Society of Civil Engineers Geo-Institute (G-I). All rights reserved.</a></p>';
+                    txt += '<p>DIGGS is a Special Project of the <a href="https://www.geoinstitute.org/">Amerian Society of Civil Engineers Geo-Institute (G-I)</a>. All rights reserved.</p>';
                     txt += '</div></div>';
 
                       //Set text on web pabe
