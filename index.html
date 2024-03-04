@@ -5,7 +5,7 @@
     </head>
     <body>
         <script>
-            // Script to create listing of repository contents for Github pages - for sites with docs/ as the root folder
+            // Script to create listing of repository contents for Github pages - for sites with the branch as the root folder
             //Set variables to determine directory location ans repository name
                 var path = document.location.pathname.substring(0,document.location.pathname.lastIndexOf("/"));
                 var repo = path.substring(1, path.length);
@@ -20,7 +20,7 @@
                 txt += '<table>';
                 txt += '<tr><th valign="top"><img src="https://apache.org/icons/blank.gif" alt="[ ]"></th><th><a href="?C=N;O=D">Name</a></th><th><a href="?C=M;O=A">Last Modified</a></th><th><a href="?C=S;O=A">Size</a></th></tr>';
                 txt += '<tr><th colspan="4"><hr></th></tr>';
-                txt += '<tr><td valign="top"><img src="https://apache.org/icons/back.gif" alt="[PARENTDIR]"></td><td><a href="../">Parent Directory</a></td><td align="right">  - </td><</tr>';
+                txt += '<tr><td valign="top"><img src="https://apache.org/icons/back.gif" alt="[PARENTDIR]"></td><td><a href="../">Parent Directory</a></td><td align="right">  - </td></tr>';
 
                 // Call Github API to get repository contents
                 (async () => {
