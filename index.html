@@ -72,7 +72,8 @@
                         for (let dt of dat) {
                             var d = new Date(dt.commit.author.date);
                             var yr = d.getFullYear();
-                            var mo = ("0"+d.getMonth()+1).slice(-2);
+                            var mo = ("0"+ (d.getMonth()+1).slice(-2));
+                            mo = ("0"+mo).slice(-2);
                             var day = ("0"+d.getDate()).slice(-2);
                             dString = yr + '-' + mo + '-' + day +' '+('0' + d.getHours()).slice(-2)+':'+('0' + d.getMinutes()).slice(-2)+':'+('0' + d.getSeconds()).slice(-2);
                         }
