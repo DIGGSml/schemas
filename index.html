@@ -24,7 +24,7 @@
 
                 // Call Github API to get repository contents
                 (async () => {
-                    var api = "https://api.github.com/repos/diggsml/" + repo + "/contents/docs"+dir;
+                    var api = "https://api.github.com/repos/diggsml/" + repo + "/contents"+dir;
                     const response = await fetch(api);
                     const data = await response.json();
                     var dString = "";
@@ -64,7 +64,7 @@
 
 
                         //Build request string for determining last commit date for item
-                        var commitapi = "https://api.github.com/repos/diggsml/" + repo + "/commits?path=docs" + dir + "/" + rec.name + "&page=1&per_page=1"; 
+                        var commitapi = "https://api.github.com/repos/diggsml/" + repo + "/commits?path=" + dir + "/" + rec.name + "&page=1&per_page=1"; 
 
                          //Call function to return last commit date
                          const resp = await fetch(commitapi);
