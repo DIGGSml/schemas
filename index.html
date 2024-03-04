@@ -11,9 +11,9 @@
                 var repo = path.substring(1, path.length);
                 if(repo.indexOf("/") > 0) repo = repo.substring(0,repo.indexOf("/"));
                 var dir = path.substring(repo.length+1,path.length);
-                  console.log("Path =" + path);
-                  console.log("Repository = " + repo);
-                  console.log("Directory = " + dir);
+//                 console.log("Path =" + path);
+//                  console.log("Repository = " + repo);
+//                  console.log("Directory = " + dir);
 
             //Write out header lines
                 var txt = "<h1>Index of " + path + "</h1>";
@@ -37,7 +37,7 @@
                         if(rec.name == "img") continue;
                         if(rec.name == ".gitignore") continue;
                         if(rec.name == "README.md") continue;
-//                        if(rec.name == "LICENSE"); continue;
+                        if(rec.name == "LICENSE"); continue;
 
                         //Find file type and sassign icon for directory display
                         if(rec.type == "file") {
