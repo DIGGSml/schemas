@@ -5,7 +5,7 @@
     </head>
     <body>
         <script>
-            // Script to create listing of repository contents for Github pages - for sites with docs/ as the root folder
+            // Script to create listing of repository contents for Github pages - for sites with a branch being the root folder
             //Set variables to determine directory location ans repository name
                 var path = document.location.pathname.substring(0,document.location.pathname.lastIndexOf("/"));
                 var repo = path.substring(1, path.length);
@@ -24,11 +24,11 @@
 
                 // Call Github API to get repository contents
                 (async () => {
-                    var api = "https://api.github.com/repos/diggsml/" + repo + "/contents/docs"+dir;
+                    var api = "https://api.github.com/repos/diggsml/" + repo + "/contents"+dir;
                     const response = await fetch(api);
                     const data = await response.json();
                     var dString = "";
-                    //Loop to parse JSON response; do not list                                 resouce files and folders
+                    //Loop to parse JSON response; do not list resouce files and folders
                     for (let rec of data) {
                         if(rec.name == "scripts") continue;
                         if(rec.name == "icons") continue;
@@ -53,7 +53,7 @@
                         } else if(size < 1000) {
                             size = size + " bytes";
                         } else if(size >= 1000 && size < 1000000){
-                            size = Math.round(size/1000 * 10) / 10;
+                            size = Math.round(size/1000 * 10) / 1
                             size = size + ' KB';
                         } else if(size >= 1000000) {
                             size = Math.round(size/1000000 * 10) / 10;
@@ -62,7 +62,7 @@
 
 
                         //Build request string for determining last commit date for item
-                        var commitapi = "https://api.github.com/repos/diggsml/" + repo + "/commits?path=docs" + dir + "/" + rec.name + "&page=1&per_page=1"; 
+                        var commitapi = "https://api.github.com/repos/diggsml/" + repo + "/commits?path=" + dir + "/" + rec.name + "&page=1&per_page=1"; 
 
                          //Call function to return last commit date
                          const resp = await fetch(commitapi);
