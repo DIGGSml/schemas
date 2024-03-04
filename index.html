@@ -85,7 +85,7 @@
                     txt += '<a href="http://diggsml.org/' + repo + '/">diggsml.org/' + repo + '</a> is the official ' + rtype + ' repository for the <a href="http://diggsml.org">DIGGS project, a data interchange standard for the geotechnical and geoenvironmental communityy</a><br/>';
                     txt += '<a href="http://www.diggsml.org">www.diggsml.org</a> is the official namespace of the DIGGS project.</p>';
                     if(rtype = "schema"){
-                        if (dir = ""){
+                        if (dir == ""){
                             txt += '<p><You may download the schema files as a single compressed file per release version at <a href="https://github.com/DIGGSml/schema-dev/releases">https://github.com/DIGGSml/schema-dev/releases</a></p>';
                         }else{
                             var version = dir.substring(1,dir.substring.indexOf("/"));
