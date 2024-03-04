@@ -24,7 +24,7 @@
 
                 // Call Github API to get repository contents
                 (async () => {
-                    var api = "https://api.github.com/repos/diggsml/" + repo + "/contents";
+                    var api = "https://api.github.com/repos/diggsml/" + repo + "/contents" + dir;
                     const response = await fetch(api);
                     const data = await response.json();
                     var dString = "";
