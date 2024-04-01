@@ -15,7 +15,7 @@
     <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="gml3.2Profile_diggs.xsd"/>
     <import namespace="http://www.energistics.org/energyml/data/commonv2"
         schemaLocation="witsml/2.0/data/common/v2.1/xsd_schemas/EmlAllObjects.xsd"/>
-    <element name="ProcessedGeophysicalSurvey" type="diggs:ProcessedGeophysicalSurveyType"
+    <element name="GeophysicalProcessing" type="diggs:GeophysicalProcessingType"
         substitutionGroup="diggs:AbstractProcedure">
         <annotation>
             <documentation>A procedure object used to define the moethod(s) involved in proceessing gepphysical field data to produce a processed set of results.</documentation>
@@ -148,7 +148,7 @@ DSB: REMOVED FROM PROFILE
         </sequence>
     </complexType>
 
-    <element name="VolumeSpace" substitutionGroup="diggs:AbstractSamplingFeature"
+    <element name="VolumeSpace" substitutionGroup="diggs:AbstractVolumeSamplingFeature"
         type="diggs:VolumeSpaceType">
         <annotation>
             <documentation>A generic Diggs 3D sampling feature that represents a volume that defines the sampling space. The featureExtent properties uses Solid geometry.</documentation>
@@ -378,7 +378,7 @@ DSB: REMOVED FROM PROFILE
             </extension>
         </complexContent>
     </complexType>
-    <complexType name="ProcessedGeophysicalSurveyType">
+    <complexType name="GeophysicalProcessingType">
         <complexContent>
             <extension base="diggs:AbstractProcedureType">
                 <sequence>
@@ -516,7 +516,7 @@ DSB: REMOVED FROM PROFILE
             </element>
         </sequence>
     </complexType>
-    <element name="GP_ArealSurvey" substitutionGroup="diggs:AbstractSamplingFeature"
+    <element name="GP_ArealSurvey" substitutionGroup="diggs:AbstractPlanarSamplingFeature"
         type="diggs:GP_ArealSurveyType"/>
     <complexType name="GP_ArealSurveyType">
         <complexContent>
@@ -537,7 +537,7 @@ DSB: REMOVED FROM PROFILE
             </extension>
         </complexContent>
     </complexType>
-    <element name="GP_Trackline" substitutionGroup="diggs:AbstractSamplingFeature"
+    <element name="GP_Trackline" substitutionGroup="diggs:AbstractLinearSamplingFeature"
         type="diggs:GP_TracklineType">
         <annotation>
             <documentation>A linear sampling feature that records the geographic location of a
@@ -915,17 +915,16 @@ DSB: REMOVED FROM PROFILE
             </element>
         </sequence>
     </complexType>
-    <element name="GP_FieldProcedure" type="diggs:GP_FieldProcedureType"/>
+    <element name="GP_FieldProcedure" type="diggs:GP_FieldProcedureType"
+        substitutionGroup="diggs:AbstractInsituTestProcedure">
+        <annotation>
+            <documentation>An procedure object that describes the components of a geophysical field survey, including details about the receiver and source equipment, data acquisition system, recording parameters, and source-receiver configurations or platform geometries.</documentation>
+        </annotation>
+    </element>
     <complexType name="GP_FieldProcedureType">
         <complexContent>
-            <extension base="diggs:AbstractProcedureType">
+            <extension base="diggs:AbstractInsituTestProcedureType">
                 <sequence>
-                    <element minOccurs="0" name="otherFieldProcedureProperty"
-                        type="diggs:ParameterPropertyType" maxOccurs="unbounded">
-                        <annotation>
-                            <documentation>A property type containing a Parameter object for listing parameter names and values for non-standard procedure properties (metadata).</documentation>
-                        </annotation>
-                    </element>
                     <element minOccurs="0" name="receiverEquipment"
                         type="diggs:ReceiverEquipmentPropertyType" maxOccurs="unbounded">
                         <annotation>

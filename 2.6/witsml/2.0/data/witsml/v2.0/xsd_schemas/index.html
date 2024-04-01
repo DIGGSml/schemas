@@ -74,7 +74,7 @@
                             dString = d.getFullYear() + '-' + ("0"+ (d.getMonth()+1)).slice(-2) + '-' + ("0"+d.getDate()).slice(-2) +' '+('0' + d.getHours()).slice(-2)+':'+('0' + d.getMinutes()).slice(-2)+':'+('0' + d.getSeconds()).slice(-2);
                         }
                         //Write out row for item
-                        txt += '<tr><td valign="top">'+image+'</td><td><a href="'+rec.name+'">'+rec.name+'</a></td><td>'+dString+'</td><td>'+size+'</td</tr>';
+                        txt += '<tr><td valign="top">'+image+'</td><td><a href="'+rec.name+'">'+rec.name+'</a></td><td>'+dString+'</td><td>'+size+'</td></tr>';
                     }
                     txt += '</table>';
                     txt+= '<div style="font-size:0.8em; font-family:arial; text-align: center;">';
@@ -82,6 +82,7 @@
                     if(repo == "def") var rtype = "resource";
                     if(repo == "schemas") rtype = "schema";
                     if(repo == "doc") rtype = "documantation";
+                    if(repo == "schema-dev") rtype = "schema development";
                     txt += '<a href="http://diggsml.org/' + repo + '/">diggsml.org/' + repo + '</a> is the official ' + rtype + ' repository for the <a href="http://diggsml.org">DIGGS project</a>, a data interchange standard for the geotechnical and geoenvironmental community.<br/>';
                     txt += '<a href="http://www.diggsml.org">www.diggsml.org</a> is the official namespace of the DIGGS project.</p>';
                     if(rtype == "schema"){

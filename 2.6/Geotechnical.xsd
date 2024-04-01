@@ -32,6 +32,7 @@
                 between each state can be defined based on a change in the soil's behavior. The
                 Atterberg limits can be used to distinguish between silt and clay, and it can
                 distinguish between different types of silts and clays.</documentation>
+            <documentation source="name">Atterberg Limits Test</documentation>
         </annotation>
     </element>
     <complexType name="AtterbergLimitsTestType">
@@ -2652,18 +2653,19 @@ consolidation (ch) and in situ horizontal coefficient of permeability (kh)</docu
 	-->
     <element abstract="false" name="EnvironmentalScreeningTest"
         substitutionGroup="diggs:AbstractLaboratoryTestProcedure"
-        type="diggs_geo:PhotoIonizationDetectorTestType">
+        type="diggs_geo:EnvironmentalScreeningTestType">
         <annotation>
             <documentation>An object to be used for describing metadata properties of any type of field environmental screening tests, such as a photo ionization or flame ionization tests for gas screening or XRF testing for metals. No specific properties are identified, use otherTestProperty to populate metadata</documentation>
         </annotation>
     </element>
-    <complexType name="PhotoIonizationDetectorTestType">
+    <complexType name="EnvironmentalScreeningTestType">
         <complexContent>
             <extension base="diggs:AbstractLaboratoryTestProcedureType">
                 <sequence/>
             </extension>
         </complexContent>
     </complexType>
+
     <element name="SpecificGravityTest" type="diggs_geo:SpecificGravityTestType" abstract="false"
         substitutionGroup="diggs:AbstractLaboratoryTestProcedure">
         <annotation>
@@ -3118,7 +3120,11 @@ soil, which is dependent upon the water content of the soil, along with the type
         </complexContent>
     </complexType>
     <element name="RedoxTest" substitutionGroup="diggs:AbstractLaboratoryTestProcedure"
-        type="diggs_geo:RedoxTestType"> </element>
+        type="diggs_geo:RedoxTestType">
+        <annotation>
+            <documentation>A redox test measures a sample's overall reducing or oxidizing capacity. The redox potential is measured in millivolts (mV) relative to a standard hydrogen electrode and is commonly measured using a platinum electrode with a saturated calomel electrode as reference.</documentation>
+        </annotation>
+    </element>
     <complexType name="RedoxTestType">
         <complexContent>
             <extension base="diggs:AbstractLaboratoryTestProcedureType">

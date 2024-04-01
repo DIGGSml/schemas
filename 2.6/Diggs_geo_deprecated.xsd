@@ -680,5 +680,36 @@
             </extension>
         </complexContent>
     </complexType>
+    <element name="FlameIonizationDetectorTest" type="diggs_geo:FlameIonizationDetectorTestType"
+        abstract="false" substitutionGroup="diggs:AbstractLaboratoryTestProcedure">
+        <annotation>
+            <documentation>A test that detects total concentrations of organic gases and vapors, by ionizing the gases in a flame. A current is produced in proportion to the number of carbon atoms present. This test procedure is deprecated in favor of the EnvironmentalScreeningTest.</documentation>
+        </annotation>
+    </element>
+    <complexType name="FlameIonizationDetectorTestType">
+        <annotation>
+            <documentation/>
+        </annotation>
+        <complexContent>
+            <extension base="diggs:AbstractLaboratoryTestProcedureType">
+                <sequence/>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <element name="PhotoIonizationDetectorTest" type="diggs_geo:PhotoIonizationDetectorTestType"
+        substitutionGroup="diggs:AbstractLaboratoryTestProcedure">
+        <annotation>
+            <documentation>A test to measure volatile organic compounds (VOC's) using a photoizonization detector. This test procedure is deprecated in favor of the EnvironmentalScreeningTest.</documentation>
+        </annotation>
+    </element>
+    <complexType name="PhotoIonizationDetectorTestType">
+        <complexContent>
+            <extension base="diggs:AbstractLaboratoryTestProcedureType">
+                <sequence/>
+            </extension>
+        </complexContent>
+    </complexType>
+
 
 </schema>

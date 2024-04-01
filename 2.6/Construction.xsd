@@ -10,10 +10,6 @@
     xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
     targetNamespace="http://diggsml.org/schemas/2.6" version="2.6" elementFormDefault="qualified"
     vc:maxVersion="1.1" vc:minVersion="1.0">
-    <!--
- import the gml and xlinks namespaces (original local profiles)  
--->
-
 
     <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="gml3.2Profile_diggs.xsd"/>
     <import namespace="http://diggsml.org/schemas/2.6/geotechnical" schemaLocation="Diggs_geo.xsd"/>
@@ -192,8 +188,7 @@
     <element name="BleedTest" type="diggs:BleedTestType"
         substitutionGroup="diggs:AbstractMaterialTestProcedure">
         <annotation>
-            <documentation>A test procedure object that holds intermediate data and metadata for a
-                bleed test.</documentation>
+            <documentation>A test to measure the degree to which solid particles from a grout mix separates from the fluid, resulting in a layer of clear water at the surface of the grout..</documentation>
         </annotation>
     </element>
     <complexType name="BleedTestType">
@@ -1170,7 +1165,11 @@
         </complexContent>
     </complexType>
     <element name="FlowConeTest" type="diggs:FlowConeTestType"
-        substitutionGroup="diggs:AbstractMaterialTestProcedure"/>
+        substitutionGroup="diggs:AbstractMaterialTestProcedure">
+        <annotation>
+            <documentation>A test that measures the consistency of a grout mixture by measuring the amount of time for a fixed volume of grout to move through a flow cone.</documentation>
+        </annotation>
+    </element>
     <complexType name="FlowConeTestType">
         <complexContent>
             <extension base="diggs:AbstractMaterialTestlProcedureType"/>
@@ -3214,7 +3213,12 @@
         <union memberTypes="diggs:OtherNameType diggs:InjectionDataEnumType"/>
     </simpleType>
     <element name="LugeonTest" substitutionGroup="diggs:AbstractInsituTestProcedure"
-        type="diggs:LugeonTestType"/>
+        type="diggs:LugeonTestType">
+        <annotation>
+            <documentation>An in-situ testing method widely used to estimate the average hydraulic conductivity of rock formations. The test is also referred to as a "water pressure test" or a "packer test".
+</documentation>
+        </annotation>
+    </element>
     <complexType mixed="false" name="LugeonTestType">
         <complexContent>
             <extension base="diggs:AbstractInsituTestProcedureType">
@@ -3663,8 +3667,7 @@
     <element name="MarshFunnelTest" type="diggs:MarshFunnelTestType"
         substitutionGroup="diggs:AbstractMaterialTestProcedure">
         <annotation>
-            <documentation>A test procedure object that holds intermediate data and metadata for a
-                marsh funnel test.</documentation>
+            <documentation>A test for measuring the viscosity of a grout mixture using a marsh funnel.</documentation>
         </annotation>
     </element>
     <complexType name="MarshFunnelTestType">
@@ -3965,6 +3968,19 @@
     <simpleType name="GroutSpecimentExtractionLocationExtEnumType">
         <union memberTypes="diggs:OtherNameType diggs:GroutSpecimenExtractionLocationEnumType"/>
     </simpleType>
+    <element name="SetTimeTest" type="diggs:SetTimeTestType"
+        substitutionGroup="diggs:AbstractMaterialTestProcedure">
+        <annotation>
+            <documentation>A test procedure object that holds intermediate data and metadata for a set time test.</documentation>
+        </annotation>
+    </element>
+    <complexType name="SetTimeTestType">
+        <complexContent>
+            <extension base="diggs:AbstractMaterialTestlProcedureType">
+                <sequence> </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
     <element name="ViscometerTest" type="diggs:ViscometerTestType"
         substitutionGroup="diggs:AbstractMaterialTestProcedure">
         <annotation>
@@ -4076,7 +4092,11 @@
         </sequence>
     </complexType>
     <element name="LineLossTest" type="diggs:LineLossTestType"
-        substitutionGroup="diggs:AbstractMaterialTestProcedure"/>
+        substitutionGroup="diggs:AbstractMaterialTestProcedure">
+        <annotation>
+            <documentation>A test to measure the pressure loss between the grout pump and the grout injection point due to friction in the grout lines.</documentation>
+        </annotation>
+    </element>
     <complexType name="LineLossTestType">
         <complexContent>
             <extension base="diggs:AbstractMaterialTestlProcedureType">
@@ -4214,7 +4234,11 @@
         <union memberTypes="eml:VolumePerVolumeUom eml:MassPerMassUom"/>
     </simpleType>
     <element name="SyneresisTest" substitutionGroup="diggs:AbstractMaterialTestProcedure"
-        type="diggs:SyneresisTestType"/>
+        type="diggs:SyneresisTestType">
+        <annotation>
+            <documentation>A test to measure the process in which gel shrinks and loses the entire liquid present inside it after standing for a long time.</documentation>
+        </annotation>
+    </element>
     <complexType mixed="false" name="SyneresisTestType">
         <complexContent>
             <extension base="diggs:AbstractMaterialTestlProcedureType">
@@ -4638,7 +4662,7 @@
             </extension>
         </complexContent>
     </complexType>
-    <element name="GroutTrenchCutoffWall" substitutionGroup="diggs:AbstractSamplingFeature"
+    <element name="GroutTrenchCutoffWall" substitutionGroup="diggs:AbstractLinearSamplingFeature"
         type="diggs:GroutTrenchCutoffWallType"/>
     <complexType name="CutterSoilMixingToolType">
         <complexContent>
