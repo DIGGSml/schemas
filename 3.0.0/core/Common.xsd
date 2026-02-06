@@ -348,7 +348,10 @@
     </element>
     <element name="samplingFeatureRef" type="diggs:FeatureReferenceType">
         <annotation>
-            <appinfo source="urn:x-gml:targetElement">Diggs:AbstractConstructionActivity</appinfo>
+            <appinfo source="urn:x-gml:targetElement">diggs:Borehole
+diggs:Sounding
+diggs:TrialPit
+diggs:Station</appinfo>
             <documentation>A reference to a sampling feature from which data are obtained or in
                 which an activity occurs.</documentation>
             <documentation>A property element that supports a value by reference only. The target
@@ -402,7 +405,7 @@
             </documentation>
         </annotation>
         <sequence minOccurs="1">
-            <element ref="diggs:AssociatedFile" maxOccurs="1" minOccurs="1"> </element>
+            <element ref="diggs:AssociatedFile" maxOccurs="1" minOccurs="0"> </element>
         </sequence>
         <attributeGroup ref="gml:AssociationAttributeGroup"/>
         <attributeGroup ref="gml:OwnershipAttributeGroup"/>
@@ -457,7 +460,7 @@
                 object.</documentation>
         </annotation>
         <sequence>
-            <element maxOccurs="1" minOccurs="1" ref="diggs:Detector"/>
+            <element maxOccurs="1" minOccurs="0" ref="diggs:Detector"/>
         </sequence>
         <attributeGroup ref="gml:AssociationAttributeGroup"/>
         <attributeGroup ref="gml:OwnershipAttributeGroup"/>
@@ -747,7 +750,6 @@
         <annotation>
             <appinfo>diggs:Specification</appinfo>
             <appinfo>diggs:DrivenPenetrationTest</appinfo>
-            <appinfo>diggs_geo:DrivenPenetrationTest</appinfo>
             <documentation>Property type that allows for samplingMethod to include or reference a
                 Specification object. In the case where the sampling method is a
                 DrivenPenetrationTest procedure, the xlink:href attribute shall point to the
@@ -755,7 +757,7 @@
                 samples,</documentation>
         </annotation>
         <sequence>
-            <element ref="diggs:Specification"/>
+            <element ref="diggs:Specification" minOccurs="0"/>
         </sequence>
         <attributeGroup ref="gml:AssociationAttributeGroup"/>
         <attributeGroup ref="gml:OwnershipAttributeGroup"/>
@@ -775,7 +777,7 @@
                 object.</documentation>
         </annotation>
         <sequence>
-            <element ref="diggs:SoftwareApplication" minOccurs="1" maxOccurs="1"/>
+            <element ref="diggs:SoftwareApplication" minOccurs="0" maxOccurs="1"/>
         </sequence>
         <attributeGroup ref="gml:AssociationAttributeGroup"/>
         <attributeGroup ref="gml:OwnershipAttributeGroup"/>
@@ -796,7 +798,7 @@
             <documentation>Complex type: SpecimenPropertyType</documentation>
         </annotation>
         <sequence minOccurs="0">
-            <element maxOccurs="1" minOccurs="1" ref="diggs:AbstractSpecimen"/>
+            <element maxOccurs="1" minOccurs="0" ref="diggs:AbstractSpecimen"/>
         </sequence>
         <attributeGroup ref="gml:AssociationAttributeGroup"/>
         <attributeGroup ref="gml:OwnershipAttributeGroup"/>
@@ -807,7 +809,7 @@
                 (belongs to the AbstractTestProcedure substitution group).</documentation>
         </annotation>
         <sequence>
-            <element minOccurs="1" ref="diggs:AbstractTestProcedure" maxOccurs="1"/>
+            <element minOccurs="0" ref="diggs:AbstractTestProcedure" maxOccurs="1"/>
         </sequence>
         <attributeGroup ref="gml:AssociationAttributeGroup"/>
         <attributeGroup ref="gml:OwnershipAttributeGroup"/>
